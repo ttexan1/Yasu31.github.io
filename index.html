@@ -13,17 +13,33 @@ padding:0 10px}
 h1,h2,h3{line-height:1.2}
 img{padding: 5px}
 header{
-  position:fixed;
   top:0px;
   left:0px;
   right:0px;
   padding: 0px 0px;
-  background: #DDDDDD;
+  /*background: #DDDDDD;*/
   text-align: center;
 }
 main{
-  padding: 30px 0;
 }
+/*wrap Youtube embedded videos in <div class="videowrapper"> to have it resize*/
+.videowrapper {
+    float: none;
+    clear: both;
+    width: 100%;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    height: 0;
+}
+.videowrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 </style>
 </head>
 <body>
@@ -31,18 +47,50 @@ main{
     Yasunori Toshimitsu's Page
   </h1></header>
 <main>
+  <img src="img/profile.JPG" style="float:right;width:40%;">
 <h2>
   About
 </h2>
 <p>
-  <img src="img/profile.JPG" style="float:right;width:40%;">
   I am an undergrad student in the Department of Mechano-Informatics of the Faculty of Engineering at the <a href="http://www.u-tokyo.ac.jp/en/">University of Tokyo.</a>
 </p>
 
+
+<h2>Projects</h2>
+<p>Some of them were just for fun, some of them were class or extracurricular projects.</p>
+
+<hr style="width:100%;">
+<h3>ARDUroid</h3>
+<h4>~Android-controlled reptilian-ish robot~</h4>
+<img src="img/arduroid1.png" style="float:left;width:50%;">
+<a href="https://github.com/Yasu31/ARDUroid">GitHub repo</a><br>
+<p>This robot interfaces an Android device with an Arduino, so the robot can utilize the processing power, the display, the internet connectivity etc. of a smartphone. I developed this as the final project for an Android app developing course.</p>
+<div class="videowrapper"><iframe src="https://www.youtube.com/embed/0iuH44IqzT0?rel=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></div>
+<hr style="width:100%;">
+
+<!--
+<h3>Project name</h3>
+<h4>~simple description~</h4>
+<img src="" style="float:left;width:50%;">
+<a href="https://github.com/Yasu31/">GitHub repo</a><br>
+<p>Longer description</p>
+<div class="videowrapper"><iframe></iframe></div>
+<hr style="width:100%;">
+ -->
+ <h2>Contact</h2>
+ GitHub: <a href="https://github.com/Yasu31">Yasu31</a><br>
+
+ Email: <script language="JavaScript">
+var username = "yasu313nori";
+var hostname = "gmail.com";
+var linktext = username + "@" + hostname ;
+document.write("<a href='" + "mail" + "to:" + username + "@" + hostname + "'>" + linktext + "</a>");
+</script>
+<!-- anti-spam code taken from http://help.website-creator.org/customer/portal/articles/1409304-avoiding-spam-when-posting-an-email-address -->
 </main>
 <hr>
 <footer>
-inspired by <a href="http://motherfuckingwebsite.com">motherfuckingwebsite.com</a> and <a href="http://bettermotherfuckingwebsite.com">bettermotherfuckingwebsite.com</a>
+This website design was inspired by <a href="http://motherfuckingwebsite.com">motherfuckingwebsite.com</a> and <a href="http://bettermotherfuckingwebsite.com">bettermotherfuckingwebsite.com</a>
 </footer>
 
 </body></html>
