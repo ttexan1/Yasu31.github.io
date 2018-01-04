@@ -6,11 +6,23 @@ name="viewport" content="width=device-width, initial-scale=1">
 body{margin:40px auto;
 max-width:650px;
 line-height:1.6;
-font-size:18px;
+/*font: 1.07em Helvetica, sans-serif;*/
+font: 1.07em "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 color:#444;
 background: #EEEEEE;
-padding:0 10px}
-h1,h2,h3{line-height:1.2}
+padding:0px 10px;
+
+}
+a:link{
+  color:#107896;
+}
+a:visited{
+  color:#3C6478;
+}
+a:hover{
+  color:AD2A1A;
+}
+h1,h2,h3{line-height:1.2;}
 img{padding: 5px}
 header{
   top:0px;
@@ -39,6 +51,10 @@ main{
     width: 100%;
     height: 100%;
 }
+img{
+  float:right;
+  width:50%;
+}
 
 </style>
 </head>
@@ -47,7 +63,7 @@ main{
     Yasunori Toshimitsu's Page
   </h1></header>
 <main>
-  <img src="img/profile.JPG" style="float:right;width:40%;">
+  <img src="img/profile.JPG" style="width:30%;">
 <h2>
   About
 </h2>
@@ -63,7 +79,7 @@ main{
 
 <h3>Mini Mobile Manipulator</h3>
 <h4>versatile armed robot</h4>
-<img src="img/mmm.jpg" style="float:left;width:50%;">
+<img src="img/mmm.jpg">
 <a href="https://github.com/Yasu31/Mini-Mobile-Manipulator">GitHub repo</a><br>
 <p>Dec. 2017 ~ ongoing <br>
 runs ROS, controllable by MoveIt!<br>
@@ -75,17 +91,51 @@ responds to voice commands
 
 <h3>ARDUroid</h3>
 <h4>Android-controlled reptilian-ish robot</h4>
-<img src="img/arduroid1.png" style="float:left;width:50%;">
+<img src="img/arduroid1.png">
 <a href="https://github.com/Yasu31/ARDUroid">GitHub repo</a><br>
+Dec. 2015 ~ Jan. 2016 <br>
 <p>This robot interfaces an Android device with an Arduino, so the robot can utilize the processing power, the display, the internet connectivity etc. of a smartphone. I developed this as the final project for an Android app developing course.</p>
 <div class="videowrapper"><iframe src="https://www.youtube.com/embed/0iuH44IqzT0?rel=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></div>
 <hr style="width:100%;">
 
-<h3><a href="https://yasu31.github.io/TAL9000">TAL 9000</a></h3>
+<h3>Virtual Window</h3>
+<h4>Turns your screen into a "window"- without any special hardware</h4>
+<img src="img/virtual_window.png">
+<a href="https://github.com/Yasu31/Virtual-Window-for-Unity">GitHub repo</a><br>
+Sep. ~ Oct. 2017
+<p>video coming soon, I hope</p>
+<!-- <div class="videowrapper"><iframe></iframe></div> -->
+<hr style="width:100%;">
+
+<h3>Video Chart</h3>
+<h4>summarize a video into a beautiful "map"</h4>
+<img src="img/video_chart.png">
+<a href="https://github.com/Yasu31/Video-Chart">GitHub repo</a><br>
+Feb. 2017 <br>
+<p>Presented at the 2017 <a href="https://hackday.jp/#hackathon">Yahoo! Japan Hackday</a> hackathon, as a two-person team. An application written in Python that takes a video(.mp4) and subtitle file(.srt), and outputs an interactive summary of its contents.</p>
+<div class="videowrapper"><iframe  src="https://www.youtube.com/embed/Ws_6_Kp5wA4?rel=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></div>
+<hr style="width:100%;">
+
+<h3>Lover Duck</h3>
+<h4>A connected rubber duck of the future!!</h4>
+<img src="img/lover_duck1.JPG">
+<a href="https://github.com/jphacks/TK_1720">GitHub repo</a><br>
+Oct 2017<br>
+<p>Presented at <a href="https://2017.jphacks.com/result/">JPHacks 2017</a>, a student hackathon.</p>
+<h5>accolades</h5>
+<p>
+  <a href="https://2017.jphacks.com/result/result_tag/innovator/">Innovator recognition</a><br>
+  <a href="https://2017.jphacks.com/result/result_tag/prize/">sponsor awards</a>: IBM, NS Solutions, FEZ</p>
+<img src="img/lover_duck2.png" style="width:100%;">
+<hr style="width:100%;">
+
+<h3>TAL 9000</h3>
 <h4>HTML, JavaScript & CSS playground</h4>
-<img src="img/tal9000.png" style="float:left;width:50%;">
+<img src="img/tal9000.png">
+<a href="https://yasu31.github.io/TAL9000">website</a><br>
 <a href="https://github.com/Yasu31/TAL9000">GitHub repo</a><br>
-<p>A stupid website that I made a long time ago.</p>
+circa 2013??<br>
+<p>A stupid website that I made a long time ago. It's mostly in Japanese.</p>
 <!-- <div class="videowrapper"><iframe></iframe></div> -->
 <hr style="width:100%;">
 
@@ -93,12 +143,13 @@ responds to voice commands
 <!--
 <h3>Project name</h3>
 <h4>simple description</h4>
-<img src="" style="float:left;width:50%;">
+<img src="">
 <a href="https://github.com/Yasu31/">GitHub repo</a><br>
 <p>Longer description</p>
 <div class="videowrapper"><iframe></iframe></div>
 <hr style="width:100%;">
  -->
+
  <h2>Contact</h2>
  GitHub: <a href="https://github.com/Yasu31">Yasu31</a><br>
 
