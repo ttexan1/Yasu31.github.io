@@ -94,7 +94,8 @@ border-bottom: dotted 10px grey;
   About
 </h2>
 <p>
-  I am an undergrad student in the Department of Mechano-Informatics of the Faculty of Engineering at the <a href="http://www.u-tokyo.ac.jp/en/">University of Tokyo.</a>
+  I am an undergrad student in the Department of Mechano-Informatics of the Faculty of Engineering at the <a href="http://www.u-tokyo.ac.jp/en/">University of Tokyo.</a><br>
+  I will study at MIT from fall 2018, as part of the exchange program between these schools.
 </p>
 
 
@@ -104,11 +105,27 @@ border-bottom: dotted 10px grey;
 
 <hr style="width:100%;">
 
+<h3>Internship at Connected Robotics</h3>
+<h4>Lead developer for the ice cream robot</h4>
+<img src="./img/ice-cream.jpg">
+<div class="data">
+  <a href="https://connected-robotics.com">Connected Robotics website</a><br>
+  Feb 2018~<br>
+</div>
+<p>
+  Connected Robotics is a company in Tokyo that aims to revolutionize cooking through the use of robots. During my internship from February to August, I was assigned to create a new ice-cream serving robot.<br>
+  I did most of the design and development myself, with assistance from the company. The robot is designed with human interaction in mind- that is why I attached eyeballs that can communicate the intention of the robot to humans, and why it has a bird-shaped design. In its hand is a weight sensor (load cell), which can measure the weight on the hand. The data from this is used to dynamically adjust the speed of the "curling movement" when it is serving ice cream. This enables the robot to serve about the same amount of ice cream each time, regardless of the flow rate.<br>
+  It is written mostly in Python, and uses ROS for internal communication and frame transform calculation(used to calculate joint angles for eyes).
+</p>
+<div class="videowrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/0Q0_jMWFcIw?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+<hr>
+
+
 <h3>Mini Walker Project</h3>
 <h4>small leg robot that kind of walks</h4>
 <img width="30%" src="img/walker.JPG">
 <div class="data">
-  <a href="https://github.com/Yasu31/walker">GitHub repo</a>(currently private)<br>
+  <a href="https://github.com/Yasu31/walker">GitHub repo</a><br>
   Feb. 2018 ~ Apr. 2018
 </div>
 <p>
@@ -134,11 +151,13 @@ border-bottom: dotted 10px grey;
 <div class="data">
   <a href="https://github.com/Yasu31/Mini-Mobile-Manipulator">GitHub repo</a><br>
   <a href="https://github.com/Yasu31/Mini-Mobile-Manipulator/raw/master/project_submissions/mmm_jishupro_report.pdf">report</a>(in Japanese)<br>
-  Dec. 2017 ~ ongoing
+  Dec. 2017 ~ May 2018
 </div>
 <p>
-  runs ROS, controllable by MoveIt!<br>
-  works in everyday environment<br>
+  The robot was originally created as the end-of-year project for 3rd year students at UTokyo(Dec. 2017 ~ Jan. 2018), and I have later expanded its capabilities so it can be controlled through LINE, a popular messaging platform in Japan. It runs ROS, and I have also made it compatible with the motion planning library MoveIt!, so it can be moved to avoid collisions with itself or other obstacles. The body was designed in Fusion 360 and made with laser-cut MDF, and the robot arm is made by Kondo Kagaku.<br>
+
+  As part of the May Festival exhibits at UTokyo, I have added the LINE messaging feature. To avoid users controlling the robot from a distance, a verification system using QR codes was created. Please see my <a href="https://www.youtube.com/watch?v=Cs9X8V0TJgQ">newer video</a> (in Japanese) for a demo video.
+<br>
 </p>
 <div class="videowrapper">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/AJrDMAA22wg?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
