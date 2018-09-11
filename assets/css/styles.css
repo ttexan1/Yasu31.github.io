@@ -1,0 +1,80 @@
+body {
+  margin: 40px auto;
+  max-width: 650px;
+  line-height: 1.6;
+  /*font: 1.07em Helvetica, sans-serif;*/
+  font: 1.07em "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  color: #444;
+  background: #EEEEEE;
+  padding: 0px 10px;
+}
+
+a:link {
+  color: #107896;
+}
+
+a:visited {
+  color: #3C6478;
+}
+
+a:hover {
+  color: AD2A1A;
+}
+
+h1, h2, h3 {
+  line-height: 1.2;
+}
+
+img {
+  padding: 5px;
+  width: 90%;
+}
+
+header {
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  padding: 0px 0px;
+  /*background: #DDDDDD;*/
+  text-align: center;
+}
+
+.data {
+  font-family: monospace;
+}
+
+main {}
+
+/*wrap Youtube embedded videos in <div class="videowrapper"> to have it resize*/
+
+.videowrapper {
+  float: none;
+  clear: both;
+  width: 100%;
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 25px;
+  height: 0;
+}
+
+.videowrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.float_right {
+  /* images that we want to float to the right */
+  float: right;
+  width: 50%;
+}
+
+hr {
+  clear: both;
+  /*without this, <hr> doesn't "break up" sections as intended...*/
+  width: 100%;
+  border: 0px;
+  border-bottom: dotted 10px grey;
+}
