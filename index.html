@@ -1,87 +1,9 @@
-<!DOCTYPE html><html><head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113515145-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-113515145-1');
-    // to ignore spam:
-    // https://carloseo.com/removing-google-analytics-spam/
-  </script>
-
-  <meta
-charset="utf-8"><meta
-name="viewport" content="width=device-width, initial-scale=1">
-<title>Yasunori Toshimitsu's page 利光泰徳のページ</title>
-<style type="text/css">
-body{margin:40px auto;
-max-width:650px;
-line-height:1.6;
-/*font: 1.07em Helvetica, sans-serif;*/
-font: 1.07em "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-color:#444;
-background: #EEEEEE;
-padding:0px 10px;
-
-}
-a:link{
-  color:#107896;
-}
-a:visited{
-  color:#3C6478;
-}
-a:hover{
-  color:AD2A1A;
-}
-h1,h2,h3{line-height:1.2;}
-img{padding: 5px}
-header{
-  top:0px;
-  left:0px;
-  right:0px;
-  padding: 0px 0px;
-  /*background: #DDDDDD;*/
-  text-align: center;
-}
-.data{
-  font-family:monospace;
-}
-main{
-}
-/*wrap Youtube embedded videos in <div class="videowrapper"> to have it resize*/
-.videowrapper {
-    float: none;
-    clear: both;
-    width: 100%;
-    position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 25px;
-    height: 0;
-}
-.videowrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-img{
-  float:right;
-  width:50%;
-}
-hr {
-clear: both; /*without this, <hr> doesn't "break up" sections as intended...*/
-width:100%;
-border: 0px;
-border-bottom: dotted 10px grey;
-}
-
-</style>
-</head>
-<body>
-  <header><h1>
+---
+layout: default
+title: Yasunori Toshimitsu's page 利光泰徳のページ
+---
+<header>
+  <h1>
     Yasunori Toshimitsu's Page
   </h1>
   <h2><center>
@@ -89,195 +11,47 @@ border-bottom: dotted 10px grey;
   </center></h2>
 </header>
 <main>
-  <img src="img/profile.JPG" style="width:30%;">
-<h2>
+  <img src="assets/img/profile.JPG" style="width:30%; float:left">
+  <h2>
   About
 </h2>
-<p>
-  I am an undergrad student in the Department of Mechano-Informatics of the Faculty of Engineering at the <a href="http://www.u-tokyo.ac.jp/en/">University of Tokyo.</a><br>
-  I will study at MIT from fall 2018, as part of the exchange program between these schools.
-</p>
+  <p>
+    I am an undergrad student in the Department of Mechano-Informatics of the Faculty of Engineering at the <a href="http://www.u-tokyo.ac.jp/en/">University of Tokyo.</a><br>
+    I am studying at MIT from fall 2018, as part of the exchange program between these two schools.
+  </p>
+
+  <h2><a href="/blog">ブログ</a></h2>
 
 
-<h2>Projects</h2>
-<p>Some of them were just for fun, some of them were class or extracurricular projects.</p>
+  <h2>Projects</h2>
+  <p>Some of them were just for fun, some of them were class or extracurricular projects.</p>
 
 
-<hr style="width:100%;">
 
-<h3>Internship at Connected Robotics</h3>
-<h4>Lead developer for the ice cream robot</h4>
-<img src="./img/ice-cream.jpg">
-<div class="data">
-  <a href="https://connected-robotics.com">Connected Robotics website</a><br>
-  Feb 2018~<br>
-</div>
-<p>
-  Connected Robotics is a company in Tokyo that aims to revolutionize cooking through the use of robots. During my internship from February to August, I was assigned to create a new ice-cream serving robot.<br>
-  I did most of the design and development myself, with assistance from the company. The robot is designed with human interaction in mind- that is why I attached eyeballs that can communicate the intention of the robot to humans, and why it has a bird-shaped design. In its hand is a weight sensor (load cell), which can measure the weight on the hand. The data from this is used to dynamically adjust the speed of the "curling movement" when it is serving ice cream. This enables the robot to serve about the same amount of ice cream each time, regardless of the flow rate.<br>
-  It is written mostly in Python, and uses ROS for internal communication and frame transform calculation(used to calculate joint angles for eyes).
-</p>
-<div class="videowrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/0Q0_jMWFcIw?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
-<hr>
+  <hr style="width:100%;">
+  {%for project in site.projects%}
+  <h2>{{project.name}}</h2>
+  {%if project.image%}
+    <img src="/assets/img/{{project.image}}" class="float_right" />
+  {%endif%}
+  <p>{{ project.content | markdownify }}</p>
+  {%if project.video %}
+    <div class="videowrapper">{{project.video}}</div>
+  {%endif%}
+  <hr style="width:100%;"> {%endfor%}
 
 
-<h3>Mini Walker Project</h3>
-<h4>small leg robot that kind of walks</h4>
-<img width="30%" src="img/walker.JPG">
-<div class="data">
-  <a href="https://github.com/Yasu31/walker">GitHub repo</a><br>
-  Feb. 2018 ~ Apr. 2018
-</div>
-<p>
-  Watching the video <a href="https://www.youtube.com/watch?v=-Vg-BdXps50">人間のような自然な歩き方をするロボット(Biped robot walks just like a human being.)</a> inspired me to create one of my own walking mini robot.
-  I decided to first read up on past research about bipedal walking algorithms, and found <b>countless</b> walking gaits. They range from simple (interpolating between known statically stable poses to create motion) to I-have-no-idea-how-it-works complex(<a href="https://www.google.co.jp/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0ahUKEwiElp2Tl6PaAhUIi7wKHZKKAkIQFggoMAA&url=https%3A%2F%2Fdspace.mit.edu%2Fopenaccess-disseminate%2F1721.1%2F110533&usg=AOvVaw1gKi1wb1qCIAaVTiVZqGG-">using convex optimization to plan dynamic motion trajectories for the Atlas robot</a>). Here, I implemented a gait based on the LIPM(Linear Inverted Pendulum Mode). It's very lightly described in the video, but please refer to the original paper if you're interested.
-</p>
-<div class="videowrapper">
-  <iframe src="https://www.youtube.com/embed/t16zUwiRlhM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-</div>
-<h4>references</h4>
-<ul>
-  <li>
-    Kajita, Shuuji & Kanehiro, Fumio & KANEKO, Kenji & Yokoi, Kazuhito & Hirukawa, Hirohisa. (2001). <a href="https://pdfs.semanticscholar.org/6a31/6e0d44e35a55c41a442b3f0d0eb1f9d4d0ca.pdf">The 3D linear inverted pendulum model: A simple modeling for a biped walking pattern generation.</a> 1. 239 - 246 vol.1. 10.1109/IROS.2001.973365. </li>
-  <li>
-    Garton H., Bugmann G., Culverhouse P., Roberts S., Simpson C., Santana A. (2014) <a href="https://www.google.co.jp/url?sa=t&rct=j&q=&esrc=s&source=web&cd=3&ved=0ahUKEwjP87LBlqPaAhWMf7wKHfi_BfcQFgg1MAI&url=https%3A%2F%2Fwww.researchgate.net%2Fprofile%2FMohamed_Mourad_Lafifi%2Fpost%2FHow_can_I_calculate_the_walking_speed_of_humanoid_robot%2Fattachment%2F59d6506679197b80779a9416%2FAS%253A502748711002112%25401496876041457%2Fdownload%2FHumanoid%2BRobot%2BGait%2BGenerator%2B_%2BFoot%2BSteps%2BCalculation%2Bfor%2BTrajectory%2BFollowing.pdf&usg=AOvVaw1HoDCOiyM8XaVbk_n6lpv7">Humanoid Robot Gait Generator: Foot Steps Calculation for Trajectory Following.</a> In: Mistry M., Leonardis A., Witkowski M., Melhuish C. (eds) Advances in Autonomous Robotics Systems. TAROS 2014. Lecture Notes in Computer Science, vol 8717. Springer, Cham
-  </li>
-</ul>
-<hr>
-
-<h3>Mini Mobile Manipulator</h3>
-<h4>versatile armed robot</h4>
-<img src="img/mmm.jpg">
-<div class="data">
-  <a href="https://github.com/Yasu31/Mini-Mobile-Manipulator">GitHub repo</a><br>
-  <a href="https://github.com/Yasu31/Mini-Mobile-Manipulator/raw/master/project_submissions/mmm_jishupro_report.pdf">report</a>(in Japanese)<br>
-  Dec. 2017 ~ May 2018
-</div>
-<p>
-  The robot was originally created as the end-of-year project for 3rd year students at UTokyo(Dec. 2017 ~ Jan. 2018), and I have later expanded its capabilities so it can be controlled through LINE, a popular messaging platform in Japan. It runs ROS, and I have also made it compatible with the motion planning library MoveIt!, so it can be moved to avoid collisions with itself or other obstacles. The body was designed in Fusion 360 and made with laser-cut MDF, and the robot arm is made by Kondo Kagaku.<br>
-
-  As part of the May Festival exhibits at UTokyo, I have added the LINE messaging feature. To avoid users controlling the robot from a distance, a verification system using QR codes was created. Please see my <a href="https://www.youtube.com/watch?v=Cs9X8V0TJgQ">newer video</a> (in Japanese) for a demo video.
-<br>
-</p>
-<div class="videowrapper">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/AJrDMAA22wg?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-</div>
-<hr>
-
-<h3>Falcon Heavy footage mixed with music from <i>Apollo 13</i></h3>
-<div class="data">Feb. 2018</div>
-<p>Just a random idea I had. Made it in just a few hours, but I'm quite proud of how it ended up.</p>
-<div class="videowrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/OmqrZ3Ch50c?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
-<hr>
-
-<h3>ARDUroid</h3>
-<h4>Android-controlled reptilian-ish robot</h4>
-<img src="img/arduroid1.png">
-<div class="data">
-  <a href="https://github.com/Yasu31/ARDUroid">GitHub repo</a><br>
-  Dec. 2015 ~ Jan. 2016 <br>
-</div>
-<p>
-  This robot interfaces an Android device with an Arduino, so the robot can utilize the processing power, the display, the internet connectivity etc. of a smartphone. I developed this as the final project for an Android app developing course.
-</p>
-<div class="videowrapper"><iframe src="https://www.youtube.com/embed/0iuH44IqzT0?rel=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></div>
-<hr>
-
-<h3>Virtual Window</h3>
-<h4>Turns your screen into a "window"- without any special hardware</h4>
-<img src="img/virtual_window.png">
-<div class="data">
-  <a href="https://github.com/Yasu31/Virtual-Window-for-Unity">GitHub repo</a><br>
-  Sep. ~ Oct. 2017
-</div>
-<p>video coming soon, I hope</p>
-<!-- <div class="videowrapper"><iframe></iframe></div> -->
-<hr>
-
-<h3>Video Chart</h3>
-<h4>summarize a video into a beautiful "map"</h4>
-<img src="img/video_chart.png">
-<div class="data">
-  <a href="https://github.com/Yasu31/Video-Chart">GitHub repo</a><br>
-  Feb. 2017
-</div>
-<p>
-  Presented at the 2017 <a href="https://hackday.jp/#hackathon">Yahoo! Japan Hackday</a> hackathon, as a two-person team. An application written in Python that takes a video(.mp4) and subtitle file(.srt), and outputs an interactive summary of its contents.
-</p>
-<div class="videowrapper"><iframe  src="https://www.youtube.com/embed/Ws_6_Kp5wA4?rel=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></div>
-<hr>
-
-<h3>Lover Duck</h3>
-<h4>A connected rubber duck of the future!!</h4>
-<img src="img/lover_duck1.JPG">
-<div class="data">
-  <a href="https://github.com/jphacks/TK_1720">GitHub repo</a><br>
-  <a href="https://www.nssol.nssmc.com/public_relations/report/jphacks.html">Inverview article</a> by NS Solutions　新日鉄住金ソリューションズ<br>
-  Oct 2017
-</div>
-<p>Presented at <a href="https://2017.jphacks.com/result/">JPHacks 2017</a>, a student hackathon. It was a five-person team comprised of students from the University of Tokyo. <br>
-Designed to prevent drowning accidents in the bathtub. The Duck has an accelerometer built inside, and its data is sent wirelessly to a host PC. When it is detected that the human is drowning/passed out, it sends an alert to the server, which can update the Web interface as well as call family members on the phone.<br>
-I had great fun in contributing to this as the hardware engineer(the innards of the duck), and witnessing my talented teammates in action.</p>
-<h4>accolades</h4>
-  <a href="https://2017.jphacks.com/result/result_tag/innovator/">Innovator recognition</a><br>
-  <a href="https://2017.jphacks.com/result/result_tag/prize/">sponsor awards</a>: IBM, NS Solutions, FEZ
-<img src="img/lover_duck2.png" style="width:100%;">
-<hr>
-
-<h3>LiS ONE</h3>
-<h4>A working educational model of a space probe</h4>
-<img src="img/lis_one.JPG">
-<div class="data">
-  June 2017
-</div>
-<p>
-  Presented at <a href="http://lis.s367.xrea.com/feel2017.html">FEEL 2017</a>, an educational space event held in Sagamihara. Created by 4 members(including me) of the space science communication organization, <a href="http://lis.s367.xrea.com/index.html">Live in SPACE Project</a>. This "space probe" has multiple sensors inside(an accelerometer, gyroscope, temperature sensor and light sensor), communicates with the mission control(a PC) wirelessly and works on a battery. This lets the children hold and play around with the probe, guessing the roles of each sensor and learning about space exploration in the process. We also had a panel describing actual space missions, and the data that they collected by using the same types of sensors as found on LiS ONE.
-</p>
-<div class="videowrapper"><iframe src="https://www.youtube.com/embed/ts2fgRZHqqU?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
-<hr>
-
-<h3>TAL 9000</h3>
-<h4>HTML, JavaScript & CSS playground</h4>
-<img src="img/tal9000.png">
-<div class="data">
-  <a href="https://yasu31.github.io/TAL9000">website</a><br>
-  <a href="https://github.com/Yasu31/TAL9000">GitHub repo</a><br>
-  circa 2013??<br>
-</div>
-<p>A stupid website that I made a long time ago. It's mostly in Japanese.</p>
-<!-- <div class="videowrapper"><iframe></iframe></div> -->
-<hr>
-
-
-<!--
-<h3>Project name</h3>
-<h4>simple description</h4>
-<img src="">
-<div class="data">
-  <a href="https://github.com/Yasu31/">GitHub repo</a><br>
-  Jan 2007~<br>
-</div>
-<p>
-  Longer description
-</p>
-<div class="videowrapper"><iframe></iframe></div>
-<hr>
- -->
-
- <h2>Contact</h2>
- GitHub: <a href="https://github.com/Yasu31">Yasu31</a><br>
-
- Email: <script language="JavaScript">
-var username = "yasu313nori";
-var hostname = "gmail.com";
-var linktext = username + "@" + hostname ;
-document.write("<a href='" + "mail" + "to:" + username + "@" + hostname + "'>" + linktext + "</a>");
-</script>
-<!-- anti-spam code taken from http://help.website-creator.org/customer/portal/articles/1409304-avoiding-spam-when-posting-an-email-address -->
+  <h2>Contact</h2> GitHub: <a href="https://github.com/Yasu31">Yasu31</a><br> Email:
+  <script language="JavaScript">
+    var username = "yasu313nori";
+    var hostname = "gmail.com";
+    var linktext = username + "@" + hostname;
+    document.write("<a href='" + "mail" + "to:" + username + "@" + hostname + "'>" + linktext + "</a>");
+  </script>
+  <!-- anti-spam code taken from http://help.website-creator.org/customer/portal/articles/1409304-avoiding-spam-when-posting-an-email-address -->
 </main>
 <hr>
 <footer>
-This website design was inspired by <a href="http://motherfuckingwebsite.com">motherfuckingwebsite.com</a> and <a href="http://bettermotherfuckingwebsite.com">bettermotherfuckingwebsite.com</a>
+  Website design inspired by <a href="http://motherfuckingwebsite.com">motherfuckingwebsite.com</a> and <a href="http://bettermotherfuckingwebsite.com">bettermotherfuckingwebsite.com</a>.<br>
+  Powered by <a href="https://jekyllrb.com">Jekyll</a>.
 </footer>
-
-</body></html>
