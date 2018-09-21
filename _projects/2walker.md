@@ -3,7 +3,7 @@ name: Mini Walker Project
 summary: small leg robot that kind of walks
 image: walker.JPG
 duration: Feb. 2018 ~ Apr. 2018
-video: <iframe src="https://www.youtube.com/embed/t16zUwiRlhM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+video: <iframe width="560" height="315" src="https://www.youtube.com/embed/tQKB5TPjc7M?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 ---
 * [GitHub repo](https://github.com/Yasu31/walker)
 
