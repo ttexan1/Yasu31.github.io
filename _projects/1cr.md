@@ -6,6 +6,8 @@ duration: Feb 2018~
 video: <iframe width="560" height="315" src="https://www.youtube.com/embed/0Q0_jMWFcIw?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 ---
 * [Connected Robotics website](https://connected-robotics.com)
+* "Interview" on Wantedly.com in Japanese([1/3](https://www.wantedly.com/companies/connectedrobotics/post_articles/139621), [2/3](https://www.wantedly.com/companies/connectedrobotics/post_articles/140612?source=feed-activities-following), [3/3](https://www.wantedly.com/companies/connectedrobotics/post_articles/141698?source=feed-activities-following))
+* [my blog post](/2018/11/02/connected-robotics.html), in Japanese
 
 Connected Robotics is a company in Tokyo that aims to revolutionize cooking through the use of robots. During my internship from February to August, I was assigned to create a new ice-cream serving robot.
 I did most of the design and development myself, with assistance from the company. The robot is designed with human interaction in mind- that is why I attached eyeballs that can communicate the intention of the robot to humans, and why it has a bird-shaped design. In its hand is a weight
